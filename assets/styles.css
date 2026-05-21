@@ -241,6 +241,34 @@
     letter-spacing: .04em;
   }
 
+  .hero-countdown-title{
+    margin: 16px 0 10px;
+    font-family: var(--font-display);
+    font-size: 10px;
+    letter-spacing: .24em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-align: center;
+    font-weight: 500;
+  }
+  .hero-countdown{
+    margin: 0 auto;
+    max-width: 300px;
+    gap: 6px;
+  }
+  .hero-countdown .cd-cell{
+    padding: 10px 4px 8px;
+    background: rgba(255,253,251,.82);
+  }
+  .hero-countdown .cd-cell .num{
+    font-size: 22px;
+  }
+  .hero-countdown .cd-cell .lbl{
+    font-size: 8px;
+    letter-spacing: .22em;
+    margin-top: 6px;
+  }
+
   /* Hero variant: split */
   body[data-cover="split"] .couple-photo{
     width: 100%;
@@ -1074,6 +1102,18 @@
     .date-strip .date{
       font-size: 18px;
     }
+    .hero-countdown-title{
+      text-align: left;
+      margin-top: 18px;
+    }
+    .hero-countdown{
+      margin: 0;
+      max-width: 360px;
+      gap: 8px;
+    }
+    .hero-countdown .cd-cell .num{
+      font-size: 24px;
+    }
     .scroll-hint{
       display: none;
     }
@@ -1257,6 +1297,12 @@
     .date-strip .date{
       font-size: 20px;
       letter-spacing: .45em;
+    }
+    .hero-countdown{
+      max-width: 390px;
+    }
+    .hero-countdown .cd-cell .num{
+      font-size: 26px;
     }
 
     body[data-cover="split"] .couple-photo{

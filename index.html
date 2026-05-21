@@ -90,6 +90,14 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
           </div>
           <div class="line"></div>
         </div>
+
+        <p class="hero-countdown-title reveal d4">Còn lại đến ngày cưới</p>
+        <div class="countdown countdown-mini hero-countdown reveal d4">
+          <div class="cd-cell"><div class="num" data-cd="d">000</div><div class="lbl">Ngày</div></div>
+          <div class="cd-cell"><div class="num" data-cd="h">00</div><div class="lbl">Giờ</div></div>
+          <div class="cd-cell"><div class="num" data-cd="m">00</div><div class="lbl">Phút</div></div>
+          <div class="cd-cell"><div class="num" data-cd="s">00</div><div class="lbl">Giây</div></div>
+        </div>
       </div>
     </div>
 
@@ -487,10 +495,10 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
     <div class="reveal d2">
       <p class="section-title" style="margin-bottom:16px">Còn lại</p>
       <div class="countdown" id="countdown">
-        <div class="cd-cell"><div class="num" id="cd-d">000</div><div class="lbl">Ngày</div></div>
-        <div class="cd-cell"><div class="num" id="cd-h">00</div><div class="lbl">Giờ</div></div>
-        <div class="cd-cell"><div class="num" id="cd-m">00</div><div class="lbl">Phút</div></div>
-        <div class="cd-cell"><div class="num" id="cd-s">00</div><div class="lbl">Giây</div></div>
+        <div class="cd-cell"><div class="num" id="cd-d" data-cd="d">000</div><div class="lbl">Ngày</div></div>
+        <div class="cd-cell"><div class="num" id="cd-h" data-cd="h">00</div><div class="lbl">Giờ</div></div>
+        <div class="cd-cell"><div class="num" id="cd-m" data-cd="m">00</div><div class="lbl">Phút</div></div>
+        <div class="cd-cell"><div class="num" id="cd-s" data-cd="s">00</div><div class="lbl">Giây</div></div>
       </div>
     </div>
 
@@ -784,25 +792,30 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
 /* =================== Countdown =================== */
 (function(){
   const target = new Date("2026-10-17T17:30:00+07:00").getTime();
-  const $d = document.getElementById("cd-d");
-  const $h = document.getElementById("cd-h");
-  const $m = document.getElementById("cd-m");
-  const $s = document.getElementById("cd-s");
+  const dayNodes = Array.from(document.querySelectorAll('[data-cd="d"]'));
+  const hourNodes = Array.from(document.querySelectorAll('[data-cd="h"]'));
+  const minNodes = Array.from(document.querySelectorAll('[data-cd="m"]'));
+  const secNodes = Array.from(document.querySelectorAll('[data-cd="s"]'));
   const pad = (n, w=2) => String(Math.max(0,n)).padStart(w, "0");
+
+  function setCountdown(d, h, m, s){
+    dayNodes.forEach(el => { el.textContent = pad(d, 3); });
+    hourNodes.forEach(el => { el.textContent = pad(h); });
+    minNodes.forEach(el => { el.textContent = pad(m); });
+    secNodes.forEach(el => { el.textContent = pad(s); });
+  }
+
   function tick(){
     const diff = target - Date.now();
     if(diff <= 0){
-      $d.textContent = "000"; $h.textContent = "00"; $m.textContent = "00"; $s.textContent = "00";
+      setCountdown(0, 0, 0, 0);
       return;
     }
     const d = Math.floor(diff / 86400000);
     const h = Math.floor((diff % 86400000) / 3600000);
     const m = Math.floor((diff % 3600000) / 60000);
     const s = Math.floor((diff % 60000) / 1000);
-    $d.textContent = pad(d, 3);
-    $h.textContent = pad(h);
-    $m.textContent = pad(m);
-    $s.textContent = pad(s);
+    setCountdown(d, h, m, s);
   }
   tick();
   setInterval(tick, 1000);
