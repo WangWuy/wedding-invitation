@@ -1,0 +1,1035 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Minh Anh &amp; Hoàng Long — Thiệp cưới</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+<script>
+/* Tweak defaults — host edits this block via __edit_mode_set_keys */
+window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
+  "palette": "blush",
+  "coverStyle": "stacked",
+  "showMusic": true,
+  "ornament": "sprig"
+}/*EDITMODE-END*/;
+</script>
+
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-palette="blush" data-cover="stacked" data-ornament="sprig">
+
+<!-- Music button -->
+<button id="musicBtn" class="music-fab" aria-label="Phát nhạc nền">
+  <svg class="note" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 18V5l12-2v13" />
+    <circle cx="6" cy="18" r="3" />
+    <circle cx="18" cy="16" r="3" />
+  </svg>
+</button>
+<!-- 🎵 Đường dẫn nhạc/ảnh được cấu hình trong assets/content.config.js -->
+<audio id="bgAudio" loop preload="none">
+  <source src="music/background.mp3" type="audio/mpeg">
+  <source src="music/background.ogg" type="audio/ogg">
+</audio>
+
+<div class="frame">
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" data-screen-label="01 Hero" id="hero">
+    <svg class="corner tl" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M10 10 Q 40 30, 30 70" fill="none"/>
+        <path d="M30 70 Q 25 90, 40 110" fill="none"/>
+        <ellipse cx="22" cy="40" rx="9" ry="4" transform="rotate(-30 22 40)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="38" cy="55" rx="10" ry="4.5" transform="rotate(30 38 55)" fill="currentColor" opacity=".4"/>
+        <ellipse cx="28" cy="78" rx="9" ry="4" transform="rotate(-20 28 78)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="44" cy="92" rx="8" ry="3.5" transform="rotate(40 44 92)" fill="currentColor" opacity=".4"/>
+        <circle cx="14" cy="22" r="3" fill="currentColor" opacity=".6"/>
+        <circle cx="48" cy="20" r="2" fill="currentColor" opacity=".5"/>
+      </g>
+    </svg>
+    <svg class="corner tr" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M10 10 Q 40 30, 30 70" fill="none"/>
+        <path d="M30 70 Q 25 90, 40 110" fill="none"/>
+        <ellipse cx="22" cy="40" rx="9" ry="4" transform="rotate(-30 22 40)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="38" cy="55" rx="10" ry="4.5" transform="rotate(30 38 55)" fill="currentColor" opacity=".4"/>
+        <ellipse cx="28" cy="78" rx="9" ry="4" transform="rotate(-20 28 78)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="44" cy="92" rx="8" ry="3.5" transform="rotate(40 44 92)" fill="currentColor" opacity=".4"/>
+        <circle cx="14" cy="22" r="3" fill="currentColor" opacity=".6"/>
+      </g>
+    </svg>
+
+    <div class="hero-inner">
+      <p class="save-the-date reveal d1">Save the Date</p>
+
+      <div class="couple-photo reveal d2" id="parallaxPhoto">
+        <div class="photo-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <circle cx="12" cy="10" r="3.5"/>
+            <path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/>
+          </svg>
+          <span class="label">Ảnh đôi</span>
+        </div>
+      </div>
+
+      <div class="hero-text">
+        <h1 class="name reveal d2">Minh Anh</h1>
+        <div class="ampersand reveal d3">&amp;</div>
+        <h1 class="name reveal d3">Hoàng Long</h1>
+
+        <div class="date-strip reveal d4">
+          <div class="line"></div>
+          <div>
+            <div class="date">15 · 10 · 2026</div>
+            <div class="weekday">Thứ Năm</div>
+          </div>
+          <div class="line"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">scroll ↓</div>
+    <button class="section-scroll-btn" data-next="family" aria-label="Cuộn xuống">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+  </section>
+
+  <!-- ========== FAMILY ========== -->
+  <section class="family" data-screen-label="02 Family" id="family">
+    <svg class="corner tl" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M10 10 Q 40 30, 30 70" fill="none"/>
+        <path d="M30 70 Q 25 90, 40 110" fill="none"/>
+        <ellipse cx="22" cy="40" rx="9" ry="4" transform="rotate(-30 22 40)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="38" cy="55" rx="10" ry="4.5" transform="rotate(30 38 55)" fill="currentColor" opacity=".4"/>
+        <ellipse cx="28" cy="78" rx="9" ry="4" transform="rotate(-20 28 78)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="44" cy="92" rx="8" ry="3.5" transform="rotate(40 44 92)" fill="currentColor" opacity=".4"/>
+        <circle cx="14" cy="22" r="3" fill="currentColor" opacity=".6"/>
+        <circle cx="48" cy="20" r="2" fill="currentColor" opacity=".5"/>
+      </g>
+    </svg>
+    <svg class="corner tr" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M10 10 Q 40 30, 30 70" fill="none"/>
+        <path d="M30 70 Q 25 90, 40 110" fill="none"/>
+        <ellipse cx="22" cy="40" rx="9" ry="4" transform="rotate(-30 22 40)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="38" cy="55" rx="10" ry="4.5" transform="rotate(30 38 55)" fill="currentColor" opacity=".4"/>
+        <ellipse cx="28" cy="78" rx="9" ry="4" transform="rotate(-20 28 78)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="44" cy="92" rx="8" ry="3.5" transform="rotate(40 44 92)" fill="currentColor" opacity=".4"/>
+        <circle cx="14" cy="22" r="3" fill="currentColor" opacity=".6"/>
+      </g>
+    </svg>
+    <svg class="corner bl" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M10 10 Q 40 30, 30 70" fill="none"/>
+        <path d="M30 70 Q 25 90, 40 110" fill="none"/>
+        <ellipse cx="22" cy="40" rx="9" ry="4" transform="rotate(-30 22 40)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="38" cy="55" rx="10" ry="4.5" transform="rotate(30 38 55)" fill="currentColor" opacity=".4"/>
+        <ellipse cx="28" cy="78" rx="9" ry="4" transform="rotate(-20 28 78)" fill="currentColor" opacity=".5"/>
+        <circle cx="14" cy="22" r="3" fill="currentColor" opacity=".6"/>
+      </g>
+    </svg>
+    <svg class="corner br" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M10 10 Q 40 30, 30 70" fill="none"/>
+        <path d="M30 70 Q 25 90, 40 110" fill="none"/>
+        <ellipse cx="22" cy="40" rx="9" ry="4" transform="rotate(-30 22 40)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="38" cy="55" rx="10" ry="4.5" transform="rotate(30 38 55)" fill="currentColor" opacity=".4"/>
+        <ellipse cx="28" cy="78" rx="9" ry="4" transform="rotate(-20 28 78)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="44" cy="92" rx="8" ry="3.5" transform="rotate(40 44 92)" fill="currentColor" opacity=".4"/>
+      </g>
+    </svg>
+    <div class="reveal">
+      <p class="section-title">Trân trọng kính mời</p>
+      <p class="section-sub">Gia đình</p>
+    </div>
+
+    <div class="family-grid">
+      <div class="family-side reveal d1">
+        <h3>Nhà trai</h3>
+        <div class="roles">
+          <div>
+            <p class="role-label">Ông bà nội</p>
+            <p class="role-name">Ông Nguyễn Văn An &amp; Bà Trần Thị Lan</p>
+          </div>
+          <div>
+            <p class="role-label">Bố mẹ chú rể</p>
+            <p class="role-name">Ông Nguyễn Văn Bình<br/>&amp; Bà Lê Thị Hương</p>
+          </div>
+          <div>
+            <p class="role-label">Trân trọng giới thiệu</p>
+            <p class="role-name bigger">Hoàng Long</p>
+            <p class="role-label" style="margin-top:6px">Trưởng nam</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="family-divider"></div>
+      <div class="family-divider-h reveal d1">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="2.5"/><circle cx="12" cy="5" r="1.5" opacity=".5"/><circle cx="12" cy="19" r="1.5" opacity=".5"/><circle cx="5" cy="12" r="1.5" opacity=".5"/><circle cx="19" cy="12" r="1.5" opacity=".5"/></svg>
+      </div>
+
+      <div class="family-side reveal d2">
+        <h3>Nhà gái</h3>
+        <div class="roles">
+          <div>
+            <p class="role-label">Ông bà ngoại</p>
+            <p class="role-name">Ông Phạm Văn Đức &amp; Bà Vũ Thị Mai</p>
+          </div>
+          <div>
+            <p class="role-label">Bố mẹ cô dâu</p>
+            <p class="role-name">Ông Phạm Văn Cường<br/>&amp; Bà Đinh Thị Hoa</p>
+          </div>
+          <div>
+            <p class="role-label">Trân trọng giới thiệu</p>
+            <p class="role-name bigger">Minh Anh</p>
+            <p class="role-label" style="margin-top:6px">Trưởng nữ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="section-scroll-btn" data-next="events" aria-label="Cuộn xuống">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+  </section>
+
+  <!-- ========== EVENTS ========== -->
+  <section class="events" data-screen-label="03 Events" id="events">
+    <svg class="corner tl" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M10 10 Q 40 30, 30 70" fill="none"/>
+        <path d="M30 70 Q 25 90, 40 110" fill="none"/>
+        <ellipse cx="22" cy="40" rx="9" ry="4" transform="rotate(-30 22 40)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="38" cy="55" rx="10" ry="4.5" transform="rotate(30 38 55)" fill="currentColor" opacity=".4"/>
+        <ellipse cx="28" cy="78" rx="9" ry="4" transform="rotate(-20 28 78)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="44" cy="92" rx="8" ry="3.5" transform="rotate(40 44 92)" fill="currentColor" opacity=".4"/>
+        <circle cx="14" cy="22" r="3" fill="currentColor" opacity=".6"/>
+        <circle cx="48" cy="20" r="2" fill="currentColor" opacity=".5"/>
+      </g>
+    </svg>
+    <svg class="corner tr" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M10 10 Q 40 30, 30 70" fill="none"/>
+        <path d="M30 70 Q 25 90, 40 110" fill="none"/>
+        <ellipse cx="22" cy="40" rx="9" ry="4" transform="rotate(-30 22 40)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="38" cy="55" rx="10" ry="4.5" transform="rotate(30 38 55)" fill="currentColor" opacity=".4"/>
+        <ellipse cx="28" cy="78" rx="9" ry="4" transform="rotate(-20 28 78)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="44" cy="92" rx="8" ry="3.5" transform="rotate(40 44 92)" fill="currentColor" opacity=".4"/>
+        <circle cx="14" cy="22" r="3" fill="currentColor" opacity=".6"/>
+      </g>
+    </svg>
+    <svg class="corner bl" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M10 10 Q 40 30, 30 70" fill="none"/>
+        <path d="M30 70 Q 25 90, 40 110" fill="none"/>
+        <ellipse cx="22" cy="40" rx="9" ry="4" transform="rotate(-30 22 40)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="38" cy="55" rx="10" ry="4.5" transform="rotate(30 38 55)" fill="currentColor" opacity=".4"/>
+        <ellipse cx="28" cy="78" rx="9" ry="4" transform="rotate(-20 28 78)" fill="currentColor" opacity=".5"/>
+        <circle cx="14" cy="22" r="3" fill="currentColor" opacity=".6"/>
+      </g>
+    </svg>
+    <svg class="corner br" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M10 10 Q 40 30, 30 70" fill="none"/>
+        <path d="M30 70 Q 25 90, 40 110" fill="none"/>
+        <ellipse cx="22" cy="40" rx="9" ry="4" transform="rotate(-30 22 40)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="38" cy="55" rx="10" ry="4.5" transform="rotate(30 38 55)" fill="currentColor" opacity=".4"/>
+        <ellipse cx="28" cy="78" rx="9" ry="4" transform="rotate(-20 28 78)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="44" cy="92" rx="8" ry="3.5" transform="rotate(40 44 92)" fill="currentColor" opacity=".4"/>
+      </g>
+    </svg>
+    <div class="reveal">
+      <p class="section-title">Hân hạnh đón tiếp</p>
+      <p class="section-sub">Chương trình</p>
+    </div>
+
+    <div class="reveal d1">
+      <div class="event-card">
+        <span class="badge">Nhà gái</span>
+        <h3 class="event-title">Lễ Vu Quy</h3>
+        <div class="event-row">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+            <rect x="3" y="5" width="18" height="16" rx="2"/>
+            <path d="M3 9h18M8 3v4M16 3v4"/>
+          </svg>
+          <div>
+            <p class="label">Thời gian</p>
+            <p class="value"><strong>10:00 — Thứ Tư</strong><br/>14 · 10 · 2026</p>
+          </div>
+        </div>
+        <div class="event-row">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M12 22s-7-7-7-13a7 7 0 0 1 14 0c0 6-7 13-7 13z"/>
+            <circle cx="12" cy="9" r="2.5"/>
+          </svg>
+          <div>
+            <p class="label">Tư gia nhà gái</p>
+            <p class="value">Số 24, ngõ 108 phố Hoa Lan,<br/>phường Yên Hòa, quận Cầu Giấy,<br/>Hà Nội</p>
+            <a class="map-link" href="#" onclick="event.preventDefault()">Xem bản đồ →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <span class="badge">Nhà hàng</span>
+        <h3 class="event-title">Tiệc Cưới</h3>
+        <div class="event-row">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 7v5l3 2"/>
+          </svg>
+          <div>
+            <p class="label">Đón khách</p>
+            <p class="value"><strong>17:30 — Thứ Bảy</strong><br/>17 · 10 · 2026</p>
+          </div>
+        </div>
+        <div class="event-row">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M3 21h18M5 21V8l7-5 7 5v13"/>
+            <path d="M10 21v-6h4v6"/>
+          </svg>
+          <div>
+            <p class="label">Trung tâm tiệc cưới</p>
+            <p class="value"><strong>Diamond Palace</strong><br/>289 Lê Trọng Tấn, quận Thanh Xuân,<br/>Hà Nội — Sảnh Pearl, tầng 3</p>
+            <a class="map-link" href="#" onclick="event.preventDefault()">Xem bản đồ →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="section-scroll-btn" data-next="gallery" aria-label="Cuộn xuống">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+  </section>
+
+  <!-- ========== GALLERY ========== -->
+  <section class="gallery" data-screen-label="04 Gallery" id="gallery">
+    <svg class="corner tl" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M10 10 Q 40 30, 30 70" fill="none"/>
+        <path d="M30 70 Q 25 90, 40 110" fill="none"/>
+        <ellipse cx="22" cy="40" rx="9" ry="4" transform="rotate(-30 22 40)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="38" cy="55" rx="10" ry="4.5" transform="rotate(30 38 55)" fill="currentColor" opacity=".4"/>
+        <ellipse cx="28" cy="78" rx="9" ry="4" transform="rotate(-20 28 78)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="44" cy="92" rx="8" ry="3.5" transform="rotate(40 44 92)" fill="currentColor" opacity=".4"/>
+        <circle cx="14" cy="22" r="3" fill="currentColor" opacity=".6"/>
+        <circle cx="48" cy="20" r="2" fill="currentColor" opacity=".5"/>
+      </g>
+    </svg>
+    <svg class="corner tr" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M10 10 Q 40 30, 30 70" fill="none"/>
+        <path d="M30 70 Q 25 90, 40 110" fill="none"/>
+        <ellipse cx="22" cy="40" rx="9" ry="4" transform="rotate(-30 22 40)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="38" cy="55" rx="10" ry="4.5" transform="rotate(30 38 55)" fill="currentColor" opacity=".4"/>
+        <ellipse cx="28" cy="78" rx="9" ry="4" transform="rotate(-20 28 78)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="44" cy="92" rx="8" ry="3.5" transform="rotate(40 44 92)" fill="currentColor" opacity=".4"/>
+        <circle cx="14" cy="22" r="3" fill="currentColor" opacity=".6"/>
+      </g>
+    </svg>
+    <svg class="corner bl" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M10 10 Q 40 30, 30 70" fill="none"/>
+        <path d="M30 70 Q 25 90, 40 110" fill="none"/>
+        <ellipse cx="22" cy="40" rx="9" ry="4" transform="rotate(-30 22 40)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="38" cy="55" rx="10" ry="4.5" transform="rotate(30 38 55)" fill="currentColor" opacity=".4"/>
+        <ellipse cx="28" cy="78" rx="9" ry="4" transform="rotate(-20 28 78)" fill="currentColor" opacity=".5"/>
+        <circle cx="14" cy="22" r="3" fill="currentColor" opacity=".6"/>
+      </g>
+    </svg>
+    <svg class="corner br" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M10 10 Q 40 30, 30 70" fill="none"/>
+        <path d="M30 70 Q 25 90, 40 110" fill="none"/>
+        <ellipse cx="22" cy="40" rx="9" ry="4" transform="rotate(-30 22 40)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="38" cy="55" rx="10" ry="4.5" transform="rotate(30 38 55)" fill="currentColor" opacity=".4"/>
+        <ellipse cx="28" cy="78" rx="9" ry="4" transform="rotate(-20 28 78)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="44" cy="92" rx="8" ry="3.5" transform="rotate(40 44 92)" fill="currentColor" opacity=".4"/>
+      </g>
+    </svg>
+    <div class="reveal">
+      <p class="section-title">Khoảnh khắc</p>
+      <p class="section-sub">Chuyện đôi mình</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item reveal d1">
+        <div class="ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <circle cx="9" cy="11" r="2"/>
+            <path d="M21 17l-5-5-9 9"/>
+          </svg>
+          <span class="label">Pre-wedding 01</span>
+        </div>
+      </div>
+      <div class="gallery-item reveal d2">
+        <div class="ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <circle cx="9" cy="11" r="2"/>
+            <path d="M21 17l-5-5-9 9"/>
+          </svg>
+          <span class="label">Pre-wedding 02</span>
+        </div>
+      </div>
+      <div class="gallery-item reveal d2">
+        <div class="ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <circle cx="9" cy="11" r="2"/>
+            <path d="M21 17l-5-5-9 9"/>
+          </svg>
+          <span class="label">Lần đầu gặp</span>
+        </div>
+      </div>
+      <div class="gallery-item reveal d3">
+        <div class="ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <circle cx="9" cy="11" r="2"/>
+            <path d="M21 17l-5-5-9 9"/>
+          </svg>
+          <span class="label">Cầu hôn</span>
+        </div>
+      </div>
+      <div class="gallery-item reveal d3">
+        <div class="ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <circle cx="9" cy="11" r="2"/>
+            <path d="M21 17l-5-5-9 9"/>
+          </svg>
+          <span class="label">Đà Lạt 2025</span>
+        </div>
+      </div>
+      <div class="gallery-item reveal d4">
+        <div class="ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <circle cx="9" cy="11" r="2"/>
+            <path d="M21 17l-5-5-9 9"/>
+          </svg>
+          <span class="label">Cùng nhau</span>
+        </div>
+      </div>
+    </div>
+    <button class="section-scroll-btn" data-next="closing" aria-label="Cuộn xuống">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+  </section>
+
+  <!-- ========== CLOSING ========== -->
+  <section class="closing" data-screen-label="05 Closing" id="closing">
+    <svg class="corner tl" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M10 10 Q 40 30, 30 70" fill="none"/>
+        <path d="M30 70 Q 25 90, 40 110" fill="none"/>
+        <ellipse cx="22" cy="40" rx="9" ry="4" transform="rotate(-30 22 40)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="38" cy="55" rx="10" ry="4.5" transform="rotate(30 38 55)" fill="currentColor" opacity=".4"/>
+        <ellipse cx="28" cy="78" rx="9" ry="4" transform="rotate(-20 28 78)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="44" cy="92" rx="8" ry="3.5" transform="rotate(40 44 92)" fill="currentColor" opacity=".4"/>
+        <circle cx="14" cy="22" r="3" fill="currentColor" opacity=".6"/>
+        <circle cx="48" cy="20" r="2" fill="currentColor" opacity=".5"/>
+      </g>
+    </svg>
+    <svg class="corner tr" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M10 10 Q 40 30, 30 70" fill="none"/>
+        <path d="M30 70 Q 25 90, 40 110" fill="none"/>
+        <ellipse cx="22" cy="40" rx="9" ry="4" transform="rotate(-30 22 40)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="38" cy="55" rx="10" ry="4.5" transform="rotate(30 38 55)" fill="currentColor" opacity=".4"/>
+        <ellipse cx="28" cy="78" rx="9" ry="4" transform="rotate(-20 28 78)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="44" cy="92" rx="8" ry="3.5" transform="rotate(40 44 92)" fill="currentColor" opacity=".4"/>
+        <circle cx="14" cy="22" r="3" fill="currentColor" opacity=".6"/>
+      </g>
+    </svg>
+    <svg class="corner bl" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M10 10 Q 40 30, 30 70" fill="none"/>
+        <path d="M30 70 Q 25 90, 40 110" fill="none"/>
+        <ellipse cx="22" cy="40" rx="9" ry="4" transform="rotate(-30 22 40)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="38" cy="55" rx="10" ry="4.5" transform="rotate(30 38 55)" fill="currentColor" opacity=".4"/>
+        <ellipse cx="28" cy="78" rx="9" ry="4" transform="rotate(-20 28 78)" fill="currentColor" opacity=".5"/>
+        <circle cx="14" cy="22" r="3" fill="currentColor" opacity=".6"/>
+      </g>
+    </svg>
+    <svg class="corner br" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M10 10 Q 40 30, 30 70" fill="none"/>
+        <path d="M30 70 Q 25 90, 40 110" fill="none"/>
+        <ellipse cx="22" cy="40" rx="9" ry="4" transform="rotate(-30 22 40)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="38" cy="55" rx="10" ry="4.5" transform="rotate(30 38 55)" fill="currentColor" opacity=".4"/>
+        <ellipse cx="28" cy="78" rx="9" ry="4" transform="rotate(-20 28 78)" fill="currentColor" opacity=".5"/>
+        <ellipse cx="44" cy="92" rx="8" ry="3.5" transform="rotate(40 44 92)" fill="currentColor" opacity=".4"/>
+      </g>
+    </svg>
+    <div class="reveal">
+      <svg class="ornament lg" viewBox="0 0 120 36" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+        <line x1="10" y1="18" x2="46" y2="18"/>
+        <line x1="74" y1="18" x2="110" y2="18"/>
+        <circle cx="60" cy="18" r="3" fill="currentColor"/>
+        <circle cx="50" cy="18" r="1.5" fill="currentColor"/>
+        <circle cx="70" cy="18" r="1.5" fill="currentColor"/>
+      </svg>
+      <p class="section-title" style="margin-top:14px">Lời ngỏ</p>
+    </div>
+
+    <p class="closing-quote reveal d1">
+      Sự hiện diện của bạn trong ngày trọng đại là niềm vinh hạnh
+      và món quà quý giá nhất đối với chúng tôi.
+    </p>
+
+    <div class="reveal d2">
+      <p class="section-title" style="margin-bottom:16px">Còn lại</p>
+      <div class="countdown" id="countdown">
+        <div class="cd-cell"><div class="num" id="cd-d">000</div><div class="lbl">Ngày</div></div>
+        <div class="cd-cell"><div class="num" id="cd-h">00</div><div class="lbl">Giờ</div></div>
+        <div class="cd-cell"><div class="num" id="cd-m">00</div><div class="lbl">Phút</div></div>
+        <div class="cd-cell"><div class="num" id="cd-s">00</div><div class="lbl">Giây</div></div>
+      </div>
+    </div>
+
+    <div class="reveal d3">
+      <button class="wish-btn" id="openWish">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+        </svg>
+        Gửi lời chúc
+      </button>
+    </div>
+
+    <div class="signature reveal d4">
+      Minh Anh &amp; Hoàng Long
+      <small>Hẹn gặp bạn</small>
+    </div>
+  </section>
+</div>
+
+<!-- ========== SIDE DOTS NAV ========== -->
+<nav class="side-dots" id="sideDots" aria-label="Điều hướng trang">
+  <button class="dot active" data-target="hero" aria-label="Hero"><span class="dot-label">Trang bìa</span></button>
+  <button class="dot" data-target="family" aria-label="Gia đình"><span class="dot-label">Gia đình</span></button>
+  <button class="dot" data-target="events" aria-label="Chương trình"><span class="dot-label">Chương trình</span></button>
+  <button class="dot" data-target="gallery" aria-label="Khoảnh khắc"><span class="dot-label">Khoảnh khắc</span></button>
+  <button class="dot" data-target="closing" aria-label="Lời ngỏ"><span class="dot-label">Lời ngỏ</span></button>
+</nav>
+
+<!-- ========== WISH MODAL ========== -->
+<div class="modal-bg" id="modal">
+  <div class="modal">
+    <button class="close" id="closeWish" aria-label="Đóng">×</button>
+    <h3>Gửi lời chúc</h3>
+    <p class="modal-sub">Dành cho cô dâu &amp; chú rể</p>
+
+    <label for="wishName">Tên của bạn</label>
+    <input id="wishName" type="text" placeholder="VD: Nguyễn Văn A" />
+
+    <label for="wishMsg">Lời chúc</label>
+    <textarea id="wishMsg" placeholder="Chúc hai bạn trăm năm hạnh phúc..."></textarea>
+
+    <div class="actions">
+      <button class="btn-cancel" id="cancelWish">Đóng</button>
+      <button class="btn-send" id="sendWish">Gửi</button>
+    </div>
+
+    <div class="wish-list" id="wishList"></div>
+  </div>
+</div>
+
+<!-- ========== TWEAKS PANEL ========== -->
+<div class="tweaks-panel" id="tweaks">
+  <h4>Tweaks <button id="tweaksClose">×</button></h4>
+
+  <div class="tw-row">
+    <div class="tw-label">Bảng màu</div>
+    <div class="tw-segs" data-key="palette">
+      <button data-val="blush">Hồng</button>
+      <button data-val="sage">Xanh</button>
+      <button data-val="dusty">Xám</button>
+    </div>
+  </div>
+
+  <div class="tw-row">
+    <div class="tw-label">Bố cục cover</div>
+    <div class="tw-segs" data-key="coverStyle">
+      <button data-val="stacked">Dọc</button>
+      <button data-val="split">Lớn</button>
+      <button data-val="frame">Khung</button>
+    </div>
+  </div>
+
+  <div class="tw-row">
+    <div class="tw-label">Trang trí</div>
+    <div class="tw-segs" data-key="ornament">
+      <button data-val="sprig">Hoa</button>
+      <button data-val="line">Tối giản</button>
+      <button data-val="none">Trắng</button>
+    </div>
+  </div>
+
+  <div class="tw-row">
+    <div class="tw-toggle" data-key="showMusic">
+      <span class="tw-label" style="margin:0">Nhạc nền</span>
+      <span class="switch"></span>
+    </div>
+  </div>
+</div>
+
+<script src="assets/content.config.js"></script>
+<script src="assets/content-loader.js"></script>
+<script>
+/* =================== Tweaks (vanilla, host protocol) =================== */
+(function(){
+  const tweaks = Object.assign({
+    palette: "blush",
+    coverStyle: "stacked",
+    showMusic: true,
+    ornament: "sprig"
+  }, window.__TWEAKS__ || {});
+
+  const body = document.body;
+  const panel = document.getElementById("tweaks");
+  const musicBtn = document.getElementById("musicBtn");
+
+  function apply(){
+    body.setAttribute("data-palette", tweaks.palette);
+    body.setAttribute("data-cover", tweaks.coverStyle);
+    body.setAttribute("data-ornament", tweaks.ornament);
+    musicBtn.style.display = tweaks.showMusic ? "" : "none";
+    // sync UI
+    panel.querySelectorAll(".tw-segs").forEach(seg=>{
+      const k = seg.dataset.key;
+      seg.querySelectorAll("button").forEach(b=>{
+        b.classList.toggle("on", b.dataset.val === tweaks[k]);
+      });
+    });
+    panel.querySelectorAll(".tw-toggle").forEach(t=>{
+      const k = t.dataset.key;
+      t.classList.toggle("on", !!tweaks[k]);
+    });
+  }
+  apply();
+
+  // wire seg buttons
+  panel.querySelectorAll(".tw-segs").forEach(seg=>{
+    const k = seg.dataset.key;
+    seg.querySelectorAll("button").forEach(b=>{
+      b.addEventListener("click", ()=>{
+        tweaks[k] = b.dataset.val;
+        apply();
+        window.parent.postMessage({type:"__edit_mode_set_keys", edits:{[k]: b.dataset.val}}, "*");
+      });
+    });
+  });
+  panel.querySelectorAll(".tw-toggle").forEach(t=>{
+    const k = t.dataset.key;
+    t.addEventListener("click", ()=>{
+      tweaks[k] = !tweaks[k];
+      apply();
+      window.parent.postMessage({type:"__edit_mode_set_keys", edits:{[k]: tweaks[k]}}, "*");
+    });
+  });
+
+  document.getElementById("tweaksClose").addEventListener("click", ()=>{
+    panel.classList.remove("open");
+    window.parent.postMessage({type:"__edit_mode_dismissed"}, "*");
+  });
+
+  // host protocol — listener FIRST, then announce
+  window.addEventListener("message", (e)=>{
+    const t = e.data && e.data.type;
+    if(t === "__activate_edit_mode") panel.classList.add("open");
+    else if(t === "__deactivate_edit_mode") panel.classList.remove("open");
+  });
+  window.parent.postMessage({type:"__edit_mode_available"}, "*");
+})();
+
+/* =================== Reveal on scroll =================== */
+(function(){
+  const frame = document.querySelector('.frame');
+  const targets = Array.from(document.querySelectorAll(".reveal"));
+  let io = null;
+  let mode = "";
+
+  function buildObserver(nextMode){
+    if(io) io.disconnect();
+    const root = nextMode === "desktop" ? frame : null;
+    io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold: .1, root});
+  }
+
+  function bindForCurrentViewport(){
+    const nextMode = window.innerWidth >= 768 ? "desktop" : "mobile";
+    if(mode !== nextMode || !io){
+      mode = nextMode;
+      buildObserver(mode);
+    }
+    targets.forEach(el=>{
+      if(!el.classList.contains("in")) io.observe(el);
+    });
+  }
+
+  bindForCurrentViewport();
+  window.addEventListener("resize", bindForCurrentViewport, {passive: true});
+})();
+
+/* =================== Parallax photo =================== */
+(function(){
+  const ph = document.getElementById("parallaxPhoto");
+  const frame = document.querySelector('.frame');
+  if(!ph) return;
+  let raf = 0;
+  const handler = (scrollY) => {
+    if(raf) return;
+    raf = requestAnimationFrame(()=>{
+      raf = 0;
+      const t = Math.max(-30, Math.min(30, scrollY * 0.08));
+      ph.style.transform = `translateY(${t}px)`;
+    });
+  };
+  // Desktop: frame is scroll container
+  frame.addEventListener('scroll', ()=> handler(frame.scrollTop), {passive:true});
+  // Mobile: window scrolls
+  window.addEventListener('scroll', ()=>{
+    if(window.innerWidth < 768) handler(window.scrollY);
+  }, {passive:true});
+})();
+
+/* =================== Snap Scroll Navigation =================== */
+(function(){
+  const frame = document.querySelector('.frame');
+  const sections = Array.from(document.querySelectorAll('section[id]'));
+  const dots = Array.from(document.querySelectorAll('#sideDots .dot'));
+  const isDesktop = () => window.innerWidth >= 768;
+
+  /* ---- Dot state update ---- */
+  function updateDots(){
+    if(!isDesktop()) return;
+    const scrollTop = frame.scrollTop;
+    const viewH = frame.clientHeight;
+    let idx = Math.round(scrollTop / viewH);
+    idx = Math.max(0, Math.min(idx, sections.length - 1));
+    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  }
+
+  frame.addEventListener('scroll', updateDots, {passive: true});
+
+  /* ---- Dot click → scroll to section ---- */
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const target = document.getElementById(dot.dataset.target);
+      if(target) target.scrollIntoView({behavior: 'smooth'});
+    });
+  });
+
+  /* ---- Section scroll buttons ---- */
+  document.querySelectorAll('.section-scroll-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const nextId = btn.dataset.next;
+      const next = document.getElementById(nextId);
+      if(next) next.scrollIntoView({behavior: 'smooth'});
+    });
+  });
+
+  /* ---- Keyboard: arrow keys / PageUp / PageDown / Home / End ---- */
+  document.addEventListener('keydown', e => {
+    if(!isDesktop()) return;
+    // Don't hijack when user is typing
+    if(document.activeElement && ['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) return;
+    const scrollTop = frame.scrollTop;
+    const viewH = frame.clientHeight;
+    let cur = Math.round(scrollTop / viewH);
+    let next = cur;
+    if(e.key === 'ArrowDown' || e.key === 'PageDown') { e.preventDefault(); next = Math.min(cur + 1, sections.length - 1); }
+    else if(e.key === 'ArrowUp' || e.key === 'PageUp') { e.preventDefault(); next = Math.max(cur - 1, 0); }
+    else if(e.key === 'Home') { e.preventDefault(); next = 0; }
+    else if(e.key === 'End') { e.preventDefault(); next = sections.length - 1; }
+    else return;
+    if(next !== cur) sections[next].scrollIntoView({behavior: 'smooth'});
+  });
+
+  /* ---- Wheel: accelerated section jump on desktop ---- */
+  let wheelTimer = null;
+  let wheelLocked = false;
+  frame.addEventListener('wheel', e => {
+    if(!isDesktop()) return;
+    if(wheelLocked) { e.preventDefault(); return; }
+    const scrollTop = frame.scrollTop;
+    const viewH = frame.clientHeight;
+    let cur = Math.round(scrollTop / viewH);
+    let next = e.deltaY > 0 ? Math.min(cur + 1, sections.length - 1) : Math.max(cur - 1, 0);
+    if(next !== cur){
+      e.preventDefault();
+      wheelLocked = true;
+      sections[next].scrollIntoView({behavior: 'smooth'});
+      clearTimeout(wheelTimer);
+      wheelTimer = setTimeout(() => { wheelLocked = false; }, 900);
+    }
+  }, {passive: false});
+
+  updateDots();
+})();
+
+/* =================== Countdown =================== */
+(function(){
+  const target = new Date("2026-10-17T17:30:00+07:00").getTime();
+  const $d = document.getElementById("cd-d");
+  const $h = document.getElementById("cd-h");
+  const $m = document.getElementById("cd-m");
+  const $s = document.getElementById("cd-s");
+  const pad = (n, w=2) => String(Math.max(0,n)).padStart(w, "0");
+  function tick(){
+    const diff = target - Date.now();
+    if(diff <= 0){
+      $d.textContent = "000"; $h.textContent = "00"; $m.textContent = "00"; $s.textContent = "00";
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    $d.textContent = pad(d, 3);
+    $h.textContent = pad(h);
+    $m.textContent = pad(m);
+    $s.textContent = pad(s);
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+
+/* =================== Music toggle =================== */
+(function(){
+  const btn = document.getElementById("musicBtn");
+  const audio = document.getElementById("bgAudio");
+  let playing = false;
+  btn.addEventListener("click", ()=>{
+    playing = !playing;
+    btn.classList.toggle("playing", playing);
+    if(playing){
+      // No real src — user replaces. Try anyway.
+      audio.play().catch(()=>{ /* placeholder */ });
+    } else {
+      audio.pause();
+    }
+  });
+})();
+
+/* =================== Wish modal =================== */
+(function(){
+  const modal = document.getElementById("modal");
+  const open = document.getElementById("openWish");
+  const close = document.getElementById("closeWish");
+  const cancel = document.getElementById("cancelWish");
+  const send = document.getElementById("sendWish");
+  const list = document.getElementById("wishList");
+  const nameI = document.getElementById("wishName");
+  const msgI = document.getElementById("wishMsg");
+
+  const STORE = "weddingWishes_v1";
+  let wishes = [];
+  try{ wishes = JSON.parse(localStorage.getItem(STORE) || "[]"); }catch{}
+
+  function render(){
+    if(!wishes.length){
+      list.innerHTML = '<div class="wish-empty">Hãy là người đầu tiên gửi lời chúc</div>';
+      return;
+    }
+    list.innerHTML = wishes.slice().reverse().map(w => `
+      <div class="wish-item">
+        <div class="wn">${escape(w.name)}</div>
+        <p class="wm">${escape(w.msg)}</p>
+      </div>
+    `).join("");
+  }
+  function escape(s){
+    return String(s).replace(/[&<>"']/g, c=>({
+      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+    }[c]));
+  }
+
+  function openModal(){
+    modal.classList.add("open");
+    render();
+    setTimeout(()=>nameI.focus(), 350);
+  }
+  function closeModal(){ modal.classList.remove("open"); }
+
+  open.addEventListener("click", openModal);
+  close.addEventListener("click", closeModal);
+  cancel.addEventListener("click", closeModal);
+  modal.addEventListener("click", (e)=>{ if(e.target === modal) closeModal(); });
+
+  send.addEventListener("click", ()=>{
+    const n = nameI.value.trim();
+    const m = msgI.value.trim();
+    if(!n || !m){
+      if(!n) nameI.focus(); else msgI.focus();
+      return;
+    }
+    wishes.push({name: n, msg: m, t: Date.now()});
+    try{ localStorage.setItem(STORE, JSON.stringify(wishes)); }catch{}
+    nameI.value = ""; msgI.value = "";
+    render();
+    // little visual ack
+    send.textContent = "✓ Đã gửi";
+    setTimeout(()=>{ send.textContent = "Gửi"; }, 1400);
+  });
+})();
+
+/* =================== Unique Corner Designs per Section =================== */
+(function(){
+  /* ---- Each string is the inner SVG path content for all 4 corners of that section ---- */
+  const DESIGNS = {
+
+    /* 02 FAMILY — Full Peony bloom, lush layered petals, broad leaves */
+    family: `
+      <path d="M6 6 Q 24 44, 20 82 Q 17 100, 30 115" fill="none"/>
+      <path d="M13 35 Q 38 26, 52 10" fill="none"/>
+      <path d="M36 26 Q 24 12, 34 4 Q 46 8, 42 24Z" fill="currentColor" opacity=".28"/>
+      <path d="M36 26 Q 48 14, 58 22 Q 56 36, 42 34Z" fill="currentColor" opacity=".24"/>
+      <path d="M36 26 Q 46 38, 40 50 Q 26 50, 24 38Z" fill="currentColor" opacity=".26"/>
+      <path d="M36 26 Q 22 34, 14 24 Q 16 10, 28 12Z" fill="currentColor" opacity=".28"/>
+      <path d="M36 26 Q 30 14, 38 10 Q 46 16, 42 26Z" fill="currentColor" opacity=".40"/>
+      <path d="M36 26 Q 46 28, 46 36 Q 38 44, 30 36Z" fill="currentColor" opacity=".38"/>
+      <path d="M36 26 Q 26 30, 22 22 Q 26 12, 34 16Z" fill="currentColor" opacity=".40"/>
+      <circle cx="36" cy="27" r="5" fill="currentColor" opacity=".58"/>
+      <circle cx="34" cy="25" r="1.5" fill="currentColor" opacity=".85"/>
+      <circle cx="38" cy="24" r="1.5" fill="currentColor" opacity=".85"/>
+      <circle cx="36" cy="29" r="1.5" fill="currentColor" opacity=".85"/>
+      <ellipse cx="10" cy="58" rx="13" ry="5.5" transform="rotate(-20 10 58)" fill="currentColor" opacity=".42"/>
+      <ellipse cx="40" cy="55" rx="12" ry="5" transform="rotate(32 40 55)" fill="currentColor" opacity=".36"/>
+      <ellipse cx="16" cy="86" rx="12" ry="5" transform="rotate(-10 16 86)" fill="currentColor" opacity=".30"/>
+      <ellipse cx="52" cy="9" rx="5.5" ry="8" transform="rotate(-20 52 9)" fill="currentColor" opacity=".30"/>
+      <path d="M48 6 Q 52 1, 56 6" fill="none" stroke-width="1" opacity=".5"/>`,
+
+    /* 03 EVENTS — Eucalyptus: round coin leaves on branching stems */
+    events: `
+      <path d="M10 8 Q 18 38, 15 68 Q 13 88, 20 112" fill="none"/>
+      <path d="M14 28 Q 42 18, 70 24" fill="none"/>
+      <path d="M14 56 Q 40 46, 66 54" fill="none"/>
+      <circle cx="10" cy="18" r="7.5" fill="currentColor" opacity=".38"/>
+      <circle cx="12" cy="42" r="8"   fill="currentColor" opacity=".34"/>
+      <circle cx="14" cy="68" r="7.5" fill="currentColor" opacity=".38"/>
+      <circle cx="16" cy="90" r="7"   fill="currentColor" opacity=".30"/>
+      <line x1="5"  y1="18" x2="15" y2="18" stroke-width=".9" opacity=".45"/>
+      <line x1="7"  y1="42" x2="17" y2="42" stroke-width=".9" opacity=".45"/>
+      <line x1="9"  y1="68" x2="19" y2="68" stroke-width=".9" opacity=".45"/>
+      <circle cx="36" cy="20" r="7"   fill="currentColor" opacity=".34"/>
+      <circle cx="56" cy="23" r="7.5" fill="currentColor" opacity=".30"/>
+      <circle cx="74" cy="26" r="6.5" fill="currentColor" opacity=".24"/>
+      <circle cx="34" cy="48" r="7"   fill="currentColor" opacity=".30"/>
+      <circle cx="54" cy="51" r="7"   fill="currentColor" opacity=".26"/>
+      <circle cx="70" cy="56" r="6"   fill="currentColor" opacity=".22"/>
+      <line x1="30" y1="20" x2="42" y2="20" stroke-width=".9" opacity=".40"/>
+      <line x1="50" y1="23" x2="62" y2="23" stroke-width=".9" opacity=".40"/>
+      <circle cx="76" cy="24" r="3"   fill="currentColor" opacity=".56"/>
+      <circle cx="73" cy="20" r="2"   fill="currentColor" opacity=".46"/>
+      <circle cx="72" cy="58" r="3"   fill="currentColor" opacity=".50"/>`,
+
+    /* 04 GALLERY — Wisteria: arched branch with hanging grape clusters */
+    gallery: `
+      <path d="M4 18 Q 36 4, 76 10 Q 98 13, 115 8" fill="none" stroke-width="1.4"/>
+      <line x1="20" y1="16" x2="18" y2="40"/>
+      <line x1="42" y1="8"  x2="40" y2="36"/>
+      <line x1="64" y1="10" x2="62" y2="42"/>
+      <line x1="84" y1="11" x2="86" y2="34"/>
+      <circle cx="16" cy="42" r="5"   fill="currentColor" opacity=".52"/>
+      <circle cx="22" cy="48" r="4.5" fill="currentColor" opacity=".46"/>
+      <circle cx="13" cy="50" r="4"   fill="currentColor" opacity=".48"/>
+      <circle cx="19" cy="56" r="4"   fill="currentColor" opacity=".42"/>
+      <circle cx="12" cy="58" r="3.5" fill="currentColor" opacity=".44"/>
+      <circle cx="18" cy="64" r="3.5" fill="currentColor" opacity=".37"/>
+      <circle cx="14" cy="70" r="3"   fill="currentColor" opacity=".32"/>
+      <circle cx="19" cy="76" r="2.5" fill="currentColor" opacity=".27"/>
+      <circle cx="15" cy="81" r="2"   fill="currentColor" opacity=".22"/>
+      <circle cx="38" cy="38" r="4.5" fill="currentColor" opacity=".48"/>
+      <circle cx="44" cy="44" r="4"   fill="currentColor" opacity=".42"/>
+      <circle cx="36" cy="46" r="3.5" fill="currentColor" opacity=".45"/>
+      <circle cx="41" cy="52" r="3.5" fill="currentColor" opacity=".38"/>
+      <circle cx="35" cy="54" r="3"   fill="currentColor" opacity=".40"/>
+      <circle cx="40" cy="60" r="3"   fill="currentColor" opacity=".33"/>
+      <circle cx="37" cy="66" r="2.5" fill="currentColor" opacity=".28"/>
+      <circle cx="39" cy="72" r="2"   fill="currentColor" opacity=".23"/>
+      <circle cx="60" cy="44" r="4"   fill="currentColor" opacity=".44"/>
+      <circle cx="66" cy="50" r="3.5" fill="currentColor" opacity=".38"/>
+      <circle cx="58" cy="52" r="3"   fill="currentColor" opacity=".40"/>
+      <circle cx="63" cy="58" r="3"   fill="currentColor" opacity=".34"/>
+      <circle cx="58" cy="64" r="2.5" fill="currentColor" opacity=".30"/>
+      <circle cx="63" cy="70" r="2"   fill="currentColor" opacity=".25"/>
+      <circle cx="84" cy="36" r="4"   fill="currentColor" opacity=".40"/>
+      <circle cx="90" cy="42" r="3.5" fill="currentColor" opacity=".35"/>
+      <circle cx="82" cy="44" r="3"   fill="currentColor" opacity=".38"/>
+      <circle cx="87" cy="50" r="3"   fill="currentColor" opacity=".30"/>
+      <circle cx="85" cy="56" r="2.5" fill="currentColor" opacity=".25"/>
+      <ellipse cx="96"  cy="9" rx="9" ry="4" transform="rotate(-6 96 9)"    fill="currentColor" opacity=".35"/>
+      <ellipse cx="110" cy="7" rx="8" ry="3.5" transform="rotate(-4 110 7)" fill="currentColor" opacity=".28"/>
+      <path d="M5 20 Q 1 30, 4 40 Q 7 50, 3 60" fill="none" stroke-width="1" opacity=".40"/>`,
+
+    /* 05 CLOSING — Cherry Blossom: branching sakura + falling petals */
+    closing: `
+      <path d="M4 10 Q 28 20, 55 13 Q 82 6, 108 14" fill="none" stroke-width="1.5"/>
+      <path d="M26 18 Q 20 6, 28 0"   fill="none"/>
+      <path d="M54 13 Q 58 1, 70 -2"  fill="none"/>
+      <path d="M38 15 Q 40 28, 34 38" fill="none"/>
+      <path d="M72 13 Q 76 26, 72 40" fill="none"/>
+      <path d="M8  12 Q  6 26, 10 40" fill="none"/>
+      <circle cx="29" cy="0"  r="4"   fill="currentColor" opacity=".32"/>
+      <circle cx="24" cy="3"  r="3.5" fill="currentColor" opacity=".30"/>
+      <circle cx="34" cy="2"  r="3.5" fill="currentColor" opacity=".30"/>
+      <circle cx="25" cy="8"  r="3.5" fill="currentColor" opacity=".28"/>
+      <circle cx="33" cy="8"  r="3.5" fill="currentColor" opacity=".28"/>
+      <circle cx="29" cy="4"  r="2.5" fill="currentColor" opacity=".55"/>
+      <circle cx="29" cy="4"  r="1"   fill="currentColor" opacity=".85"/>
+      <circle cx="70" cy="-1" r="3.5" fill="currentColor" opacity=".30"/>
+      <circle cx="65" cy="3"  r="3"   fill="currentColor" opacity=".28"/>
+      <circle cx="75" cy="2"  r="3"   fill="currentColor" opacity=".28"/>
+      <circle cx="66" cy="7"  r="3"   fill="currentColor" opacity=".26"/>
+      <circle cx="74" cy="7"  r="3"   fill="currentColor" opacity=".26"/>
+      <circle cx="70" cy="3"  r="2"   fill="currentColor" opacity=".55"/>
+      <circle cx="33" cy="37" r="3.5" fill="currentColor" opacity=".32"/>
+      <circle cx="28" cy="41" r="3"   fill="currentColor" opacity=".30"/>
+      <circle cx="38" cy="41" r="3"   fill="currentColor" opacity=".30"/>
+      <circle cx="29" cy="46" r="3"   fill="currentColor" opacity=".28"/>
+      <circle cx="37" cy="46" r="3"   fill="currentColor" opacity=".28"/>
+      <circle cx="33" cy="41" r="2"   fill="currentColor" opacity=".55"/>
+      <circle cx="72" cy="40" r="3.5" fill="currentColor" opacity=".30"/>
+      <circle cx="67" cy="44" r="3"   fill="currentColor" opacity=".28"/>
+      <circle cx="77" cy="44" r="3"   fill="currentColor" opacity=".28"/>
+      <circle cx="68" cy="49" r="3"   fill="currentColor" opacity=".26"/>
+      <circle cx="76" cy="49" r="3"   fill="currentColor" opacity=".26"/>
+      <circle cx="72" cy="44" r="2"   fill="currentColor" opacity=".50"/>
+      <circle cx="90" cy="14" r="3"   fill="currentColor" opacity=".28"/>
+      <circle cx="86" cy="17" r="2.5" fill="currentColor" opacity=".26"/>
+      <circle cx="94" cy="17" r="2.5" fill="currentColor" opacity=".26"/>
+      <circle cx="87" cy="21" r="2.5" fill="currentColor" opacity=".24"/>
+      <circle cx="93" cy="21" r="2.5" fill="currentColor" opacity=".24"/>
+      <circle cx="90" cy="17" r="1.5" fill="currentColor" opacity=".50"/>
+      <ellipse cx="48" cy="28" rx="3"   ry="2"   transform="rotate(25  48 28)"  fill="currentColor" opacity=".28"/>
+      <ellipse cx="15" cy="42" rx="2.5" ry="1.8" transform="rotate(-15 15 42)"  fill="currentColor" opacity=".30"/>
+      <ellipse cx="85" cy="28" rx="2.5" ry="1.8" transform="rotate(35  85 28)"  fill="currentColor" opacity=".25"/>
+      <ellipse cx="60" cy="35" rx="2.5" ry="1.8" transform="rotate(-25 60 35)"  fill="currentColor" opacity=".22"/>
+      <ellipse cx="10" cy="50" rx="2"   ry="1.5" transform="rotate(20  10 50)"  fill="currentColor" opacity=".28"/>`
+  };
+
+  Object.entries(DESIGNS).forEach(([id, paths]) => {
+    const section = document.getElementById(id);
+    if (!section) return;
+    section.querySelectorAll('.corner').forEach(svg => {
+      svg.innerHTML = `<g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">${paths}</g>`;
+    });
+  });
+})();
+</script>
+</body>
+</html>
