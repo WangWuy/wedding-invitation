@@ -31,7 +31,7 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
   </svg>
 </button>
 <!-- 🎵 Đường dẫn nhạc/ảnh được cấu hình trong assets/content.config.js -->
-<audio id="bgAudio" loop preload="none">
+<audio id="bgAudio" loop preload="auto">
   <source src="music/background.mp3" type="audio/mpeg">
   <source src="music/background.ogg" type="audio/ogg">
 </audio>
@@ -78,15 +78,15 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
       </div>
 
       <div class="hero-text">
-        <h1 class="name reveal d2">Minh Anh</h1>
+        <h1 class="name reveal d2" id="heroBrideName">Minh Anh</h1>
         <div class="ampersand reveal d3">&amp;</div>
-        <h1 class="name reveal d3">Hoàng Long</h1>
+        <h1 class="name reveal d3" id="heroGroomName">Hoàng Long</h1>
 
         <div class="date-strip reveal d4">
           <div class="line"></div>
           <div>
-            <div class="date">15 · 10 · 2026</div>
-            <div class="weekday">Thứ Năm</div>
+            <div class="date" id="heroDate">08 · 08 · 2026</div>
+            <div class="weekday" id="heroWeekday">Thứ Bảy</div>
           </div>
           <div class="line"></div>
         </div>
@@ -98,6 +98,17 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
           <div class="cd-cell"><div class="num" data-cd="m">00</div><div class="lbl">Phút</div></div>
           <div class="cd-cell"><div class="num" data-cd="s">00</div><div class="lbl">Giây</div></div>
         </div>
+
+        <div class="wish-marquee reveal d4" id="wishMarquee" aria-hidden="true">
+          <div class="wish-marquee-track" id="wishMarqueeTrack"></div>
+        </div>
+
+        <button class="wish-btn wish-btn-hero reveal d4 openWishTrigger" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+          Gửi lời chúc
+        </button>
       </div>
     </div>
 
@@ -162,16 +173,12 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
         <h3>Nhà trai</h3>
         <div class="roles">
           <div>
-            <p class="role-label">Ông bà nội</p>
-            <p class="role-name">Ông Nguyễn Văn An &amp; Bà Trần Thị Lan</p>
-          </div>
-          <div>
             <p class="role-label">Bố mẹ chú rể</p>
-            <p class="role-name">Ông Nguyễn Văn Bình<br/>&amp; Bà Lê Thị Hương</p>
+            <p class="role-name" id="groomParents">Bà Phan Thị Yến</p>
           </div>
           <div>
             <p class="role-label">Trân trọng giới thiệu</p>
-            <p class="role-name bigger">Hoàng Long</p>
+            <p class="role-name bigger" id="familyGroomName">Hoàng Long</p>
             <p class="role-label" style="margin-top:6px">Trưởng nam</p>
           </div>
         </div>
@@ -186,16 +193,12 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
         <h3>Nhà gái</h3>
         <div class="roles">
           <div>
-            <p class="role-label">Ông bà ngoại</p>
-            <p class="role-name">Ông Phạm Văn Đức &amp; Bà Vũ Thị Mai</p>
-          </div>
-          <div>
             <p class="role-label">Bố mẹ cô dâu</p>
-            <p class="role-name">Ông Phạm Văn Cường<br/>&amp; Bà Đinh Thị Hoa</p>
+            <p class="role-name" id="brideParents">Ông Phạm Hoàng Hải<br/>&amp; Bà Nguyễn Thị Thủy</p>
           </div>
           <div>
             <p class="role-label">Trân trọng giới thiệu</p>
-            <p class="role-name bigger">Minh Anh</p>
+            <p class="role-name bigger" id="familyBrideName">Minh Anh</p>
             <p class="role-label" style="margin-top:6px">Trưởng nữ</p>
           </div>
         </div>
@@ -267,7 +270,7 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
           </svg>
           <div>
             <p class="label">Thời gian</p>
-            <p class="value"><strong>10:00 — Thứ Tư</strong><br/>14 · 10 · 2026</p>
+            <p class="value" id="ceremonyTime"><strong>08:00 — Thứ Sáu</strong><br/>07 · 08 · 2026</p>
           </div>
         </div>
         <div class="event-row">
@@ -277,14 +280,14 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
           </svg>
           <div>
             <p class="label">Tư gia nhà gái</p>
-            <p class="value">Số 24, ngõ 108 phố Hoa Lan,<br/>phường Yên Hòa, quận Cầu Giấy,<br/>Hà Nội</p>
-            <a class="map-link" href="#" onclick="event.preventDefault()">Xem bản đồ →</a>
+            <p class="value" id="ceremonyAddress">Ấp Thừa Long, xã Thới Thuận,<br/>tỉnh Vĩnh Long</p>
+            <a class="map-link" id="ceremonyMapLink" href="#" target="_blank" rel="noopener">Xem bản đồ →</a>
           </div>
         </div>
       </div>
 
       <div class="event-card">
-        <span class="badge">Nhà hàng</span>
+        <span class="badge">Nhà trai</span>
         <h3 class="event-title">Tiệc Cưới</h3>
         <div class="event-row">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
@@ -293,7 +296,7 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
           </svg>
           <div>
             <p class="label">Đón khách</p>
-            <p class="value"><strong>17:30 — Thứ Bảy</strong><br/>17 · 10 · 2026</p>
+            <p class="value" id="receptionTime"><strong>11:00 — Thứ Bảy</strong><br/>08 · 08 · 2026</p>
           </div>
         </div>
         <div class="event-row">
@@ -303,8 +306,8 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
           </svg>
           <div>
             <p class="label">Trung tâm tiệc cưới</p>
-            <p class="value"><strong>Diamond Palace</strong><br/>289 Lê Trọng Tấn, quận Thanh Xuân,<br/>Hà Nội — Sảnh Pearl, tầng 3</p>
-            <a class="map-link" href="#" onclick="event.preventDefault()">Xem bản đồ →</a>
+            <p class="value" id="receptionAddress"><strong>Tư gia nhà trai</strong><br/>Ấp 5, xã Bình Đại,<br/>tỉnh Vĩnh Long</p>
+            <a class="map-link" id="receptionMapLink" href="#" target="_blank" rel="noopener">Xem bản đồ →</a>
           </div>
         </div>
       </div>
@@ -364,68 +367,16 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
       <p class="section-sub">Chuyện đôi mình</p>
     </div>
 
-    <div class="gallery-grid">
-      <div class="gallery-item reveal d1">
-        <div class="ph">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-            <rect x="3" y="5" width="18" height="14" rx="2"/>
-            <circle cx="9" cy="11" r="2"/>
-            <path d="M21 17l-5-5-9 9"/>
-          </svg>
-          <span class="label">Pre-wedding 01</span>
-        </div>
-      </div>
-      <div class="gallery-item reveal d2">
-        <div class="ph">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-            <rect x="3" y="5" width="18" height="14" rx="2"/>
-            <circle cx="9" cy="11" r="2"/>
-            <path d="M21 17l-5-5-9 9"/>
-          </svg>
-          <span class="label">Pre-wedding 02</span>
-        </div>
-      </div>
-      <div class="gallery-item reveal d2">
-        <div class="ph">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-            <rect x="3" y="5" width="18" height="14" rx="2"/>
-            <circle cx="9" cy="11" r="2"/>
-            <path d="M21 17l-5-5-9 9"/>
-          </svg>
-          <span class="label">Lần đầu gặp</span>
-        </div>
-      </div>
-      <div class="gallery-item reveal d3">
-        <div class="ph">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-            <rect x="3" y="5" width="18" height="14" rx="2"/>
-            <circle cx="9" cy="11" r="2"/>
-            <path d="M21 17l-5-5-9 9"/>
-          </svg>
-          <span class="label">Cầu hôn</span>
-        </div>
-      </div>
-      <div class="gallery-item reveal d3">
-        <div class="ph">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-            <rect x="3" y="5" width="18" height="14" rx="2"/>
-            <circle cx="9" cy="11" r="2"/>
-            <path d="M21 17l-5-5-9 9"/>
-          </svg>
-          <span class="label">Đà Lạt 2025</span>
-        </div>
-      </div>
-      <div class="gallery-item reveal d4">
-        <div class="ph">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-            <rect x="3" y="5" width="18" height="14" rx="2"/>
-            <circle cx="9" cy="11" r="2"/>
-            <path d="M21 17l-5-5-9 9"/>
-          </svg>
-          <span class="label">Cùng nhau</span>
-        </div>
-      </div>
+    <div class="gallery-wrap reveal">
+      <button class="gallery-nav prev" data-dir="-1" aria-label="Ảnh trước">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+      <div class="gallery-track" id="galleryTrack"></div>
+      <button class="gallery-nav next" data-dir="1" aria-label="Ảnh sau">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
     </div>
+    <a class="gallery-all-link reveal" href="https://photos.google.com/share/AF1QipPh2pIl7-SnTaXREO80G1l7fzNl90FYoqX99VqALKaOYGOOZx8kjvW4DR5Sm5WsSg?key=MDlVN3doZzlfQnpBYkJNOWFwMlZnTmprYVV2d2RR" target="_blank" rel="noopener">Xem tất cả ảnh →</a>
     <button class="section-scroll-btn" data-next="closing" aria-label="Cuộn xuống">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
     </button>
@@ -503,7 +454,7 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
     </div>
 
     <div class="reveal d3">
-      <button class="wish-btn" id="openWish">
+      <button class="wish-btn openWishTrigger" type="button">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
           <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
         </svg>
@@ -511,7 +462,7 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
       </button>
     </div>
 
-    <div class="signature reveal d4">
+    <div class="signature reveal d4" id="signatureNames">
       Minh Anh &amp; Hoàng Long
       <small>Hẹn gặp bạn</small>
     </div>
@@ -547,6 +498,21 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
 
     <div class="wish-list" id="wishList"></div>
   </div>
+</div>
+
+<!-- ========== GALLERY LIGHTBOX ========== -->
+<div class="lightbox-bg" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Đóng">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <button class="lightbox-arrow prev" id="lightboxPrev" aria-label="Ảnh trước">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+  </button>
+  <img class="lightbox-img" id="lightboxImg" alt="" />
+  <button class="lightbox-arrow next" id="lightboxNext" aria-label="Ảnh sau">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+  </button>
+  <span class="lightbox-counter" id="lightboxCounter"></span>
 </div>
 
 <!-- ========== TWEAKS PANEL ========== -->
@@ -791,7 +757,7 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
 
 /* =================== Countdown =================== */
 (function(){
-  const target = new Date("2026-10-17T17:30:00+07:00").getTime();
+  const target = new Date(window.__WEDDING_COUNTDOWN_TARGET__ || "2026-08-08T11:00:00+07:00").getTime();
   const dayNodes = Array.from(document.querySelectorAll('[data-cd="d"]'));
   const hourNodes = Array.from(document.querySelectorAll('[data-cd="h"]'));
   const minNodes = Array.from(document.querySelectorAll('[data-cd="m"]'));
@@ -826,59 +792,158 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
   const btn = document.getElementById("musicBtn");
   const audio = document.getElementById("bgAudio");
   let playing = false;
-  btn.addEventListener("click", ()=>{
-    playing = !playing;
+
+  function setPlaying(v){
+    playing = v;
     btn.classList.toggle("playing", playing);
+  }
+
+  function tryPlay(){
+    audio.play().then(()=>{
+      setPlaying(true);
+    }).catch(()=>{
+      // Autoplay blocked — start on first user interaction instead.
+      const start = ()=>{
+        audio.play().then(()=>setPlaying(true)).catch(()=>{});
+        document.removeEventListener("click", start);
+        document.removeEventListener("touchstart", start);
+        document.removeEventListener("keydown", start);
+      };
+      document.addEventListener("click", start, { once:true });
+      document.addEventListener("touchstart", start, { once:true });
+      document.addEventListener("keydown", start, { once:true });
+    });
+  }
+
+  btn.addEventListener("click", ()=>{
     if(playing){
-      // No real src — user replaces. Try anyway.
-      audio.play().catch(()=>{ /* placeholder */ });
-    } else {
       audio.pause();
+      setPlaying(false);
+    } else {
+      tryPlay();
     }
   });
+
+  tryPlay();
 })();
 
 /* =================== Wish modal =================== */
 (function(){
   const modal = document.getElementById("modal");
-  const open = document.getElementById("openWish");
+  const openTriggers = document.querySelectorAll(".openWishTrigger");
   const close = document.getElementById("closeWish");
   const cancel = document.getElementById("cancelWish");
   const send = document.getElementById("sendWish");
   const list = document.getElementById("wishList");
   const nameI = document.getElementById("wishName");
   const msgI = document.getElementById("wishMsg");
+  const marquee = document.getElementById("wishMarquee");
+  const marqueeTrack = document.getElementById("wishMarqueeTrack");
 
   const STORE = "weddingWishes_v1";
-  let wishes = [];
-  try{ wishes = JSON.parse(localStorage.getItem(STORE) || "[]"); }catch{}
+  const API_URL = (window.__WEDDING_MEDIA__ && window.__WEDDING_MEDIA__.wishesApiUrl || "").trim();
+
+  function loadLocal(){
+    try{ return JSON.parse(localStorage.getItem(STORE) || "[]"); }catch{ return []; }
+  }
+  function saveLocal(wishes){
+    try{ localStorage.setItem(STORE, JSON.stringify(wishes)); }catch{}
+  }
+
+  let wishes = loadLocal();
+  let loading = false;
 
   function render(){
+    if(loading){
+      list.innerHTML = '<div class="wish-empty">Đang tải lời chúc…</div>';
+      return;
+    }
     if(!wishes.length){
-      list.innerHTML = '<div class="wish-empty">Hãy là người đầu tiên gửi lời chúc</div>';
+      list.innerHTML = '<div class="wish-empty">Những lời chúc yêu thương từ bạn sẽ hiển thị ở đây. Hãy gửi lời chúc phúc đến hai chúng mình nhé 💝</div>';
       return;
     }
     list.innerHTML = wishes.slice().reverse().map(w => `
       <div class="wish-item">
-        <div class="wn">${escape(w.name)}</div>
-        <p class="wm">${escape(w.msg)}</p>
+        <div class="wn">${escapeHtml(w.name)}</div>
+        <p class="wm">${escapeHtml(w.msg)}</p>
       </div>
     `).join("");
   }
-  function escape(s){
+  function escapeHtml(s){
     return String(s).replace(/[&<>"']/g, c=>({
       "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
     }[c]));
+  }
+  function shuffleArray(arr){
+    for(let i = arr.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  let marqueeWishKey = null;
+
+  function renderMarquee(){
+    if(!marquee || !marqueeTrack) return;
+
+    // Skip re-render (and the animation restart it requires) when the
+    // wish list hasn't actually changed, so the second call after
+    // fetchRemoteWishes() resolves doesn't jolt an already-running marquee.
+    const key = wishes.map(w => w.t + "|" + w.name + "|" + w.msg).join("\n");
+    if(key === marqueeWishKey) return;
+    marqueeWishKey = key;
+
+    marquee.classList.add("has-wishes");
+    marqueeTrack.style.animationPlayState = "running";
+
+    const introHtml = `<span class="wish-marquee-item"> 💝 Cảm ơn tất cả mọi người rất nhiều. Hãy gửi lời chúc phúc yêu thương đến hai chúng mình nhé</span><span class="wish-marquee-sep">•</span>`;
+    const shuffled = shuffleArray(wishes.slice());
+    const itemsHtml = introHtml + shuffled.map(w => `
+      <span class="wish-marquee-item">♡ <span class="wn">${escapeHtml(w.name)}</span>: ${escapeHtml(w.msg)}</span><span class="wish-marquee-sep">•</span>
+    `.trim()).join("");
+    // Duplicate content so the -50% translateX loop is seamless.
+    marqueeTrack.innerHTML = itemsHtml + itemsHtml;
+
+    const duration = Math.max(24, Math.min(90, (wishes.length + 1) * 6));
+    marqueeTrack.style.animationDuration = duration + "s";
+
+    // Restart the CSS animation from frame 0 so the intro line is never
+    // shown mid-scroll (animation otherwise keeps its running timeline
+    // across innerHTML updates).
+    marqueeTrack.style.animation = "none";
+    void marqueeTrack.offsetWidth;
+    marqueeTrack.style.animation = "";
+  }
+
+  function fetchRemoteWishes(){
+    if(!API_URL) return;
+    loading = true;
+    render();
+    fetch(API_URL)
+      .then(r => r.json())
+      .then(data => {
+        if(data && data.ok && Array.isArray(data.wishes)){
+          wishes = data.wishes;
+        }
+      })
+      .catch(()=>{ /* giữ dữ liệu cục bộ nếu tải mạng thất bại */ })
+      .finally(()=>{
+        loading = false;
+        render();
+        renderMarquee();
+      });
   }
 
   function openModal(){
     modal.classList.add("open");
     render();
+    fetchRemoteWishes();
     setTimeout(()=>nameI.focus(), 350);
   }
   function closeModal(){ modal.classList.remove("open"); }
 
-  open.addEventListener("click", openModal);
+  openTriggers.forEach(btn => btn.addEventListener("click", openModal));
   close.addEventListener("click", closeModal);
   cancel.addEventListener("click", closeModal);
   modal.addEventListener("click", (e)=>{ if(e.target === modal) closeModal(); });
@@ -890,14 +955,50 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
       if(!n) nameI.focus(); else msgI.focus();
       return;
     }
-    wishes.push({name: n, msg: m, t: Date.now()});
-    try{ localStorage.setItem(STORE, JSON.stringify(wishes)); }catch{}
-    nameI.value = ""; msgI.value = "";
-    render();
-    // little visual ack
-    send.textContent = "✓ Đã gửi";
-    setTimeout(()=>{ send.textContent = "Gửi"; }, 1400);
+
+    send.disabled = true;
+    const entry = {name: n, msg: m, t: Date.now()};
+
+    function onSent(){
+      nameI.value = ""; msgI.value = "";
+      render();
+      renderMarquee();
+      send.disabled = false;
+      send.textContent = "✓ Đã gửi";
+      setTimeout(()=>{ send.textContent = "Gửi"; }, 1400);
+    }
+
+    if(API_URL){
+      fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({name: n, msg: m})
+      })
+        .then(r => r.json())
+        .then(data => {
+          if(data && data.ok){
+            wishes.push(entry);
+          } else {
+            wishes.push(entry);
+            saveLocal(wishes);
+          }
+        })
+        .catch(()=>{
+          // Không gửi được lên server — vẫn lưu cục bộ để không mất lời chúc.
+          wishes.push(entry);
+          saveLocal(wishes);
+        })
+        .finally(onSent);
+    } else {
+      wishes.push(entry);
+      saveLocal(wishes);
+      onSent();
+    }
   });
+
+  // Hiển thị băng lời chúc ngay khi trang tải, không cần đợi mở modal.
+  renderMarquee();
+  fetchRemoteWishes();
 })();
 
 /* =================== Unique Corner Designs per Section =================== */

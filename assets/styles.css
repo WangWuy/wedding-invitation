@@ -67,6 +67,90 @@
     justify-content: center;
   }
 
+  /* ------------------------------------------------------------
+     Small-phone tier (≤380px): tightens the base mobile styles
+     above for the smallest devices. Uses max-width (rather than
+     min-width) since it narrows the default rules downward —
+     the rest of the file is min-width-first.
+     ------------------------------------------------------------ */
+  @media (max-width: 380px){
+    section{
+      padding: 40px 18px;
+    }
+    .hero{
+      padding-top: 52px;
+      padding-bottom: 52px;
+    }
+    .countdown{
+      gap: 5px;
+      max-width: 300px;
+    }
+    .cd-cell{
+      padding: 10px 2px 8px;
+    }
+    .cd-cell .num{
+      font-size: 22px;
+    }
+    .cd-cell .lbl{
+      font-size: 8px;
+      letter-spacing: .2em;
+    }
+    .hero-countdown{
+      max-width: 260px;
+      gap: 4px;
+    }
+    .hero-countdown .cd-cell{
+      padding: 8px 3px 6px;
+    }
+    .hero-countdown .cd-cell .num{
+      font-size: 19px;
+    }
+    .wish-marquee{
+      margin-top: 6px;
+      padding: 5px 0;
+    }
+    .wish-marquee-item{
+      font-size: 11.5px;
+      padding: 0 12px;
+    }
+    .gallery-page{
+      gap: 8px;
+    }
+    .event-card{
+      padding: 22px 16px;
+    }
+    .corner{
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  /* ------------------------------------------------------------
+     Mid-phone tier (381–479px): most common phone widths (iPhone
+     12/13/14/15, Galaxy S series). Sits between the small-phone
+     tier above and the 480px family-grid breakpoint — tightens
+     spacing slightly below the 500px-frame defaults without going
+     as far as the small-phone tier.
+     ------------------------------------------------------------ */
+  @media (min-width: 381px) and (max-width: 479px){
+    section{
+      padding: 48px 22px;
+    }
+    .countdown{
+      max-width: 320px;
+      gap: 6px;
+    }
+    .hero-countdown{
+      max-width: 280px;
+    }
+    .gallery-page{
+      gap: 10px;
+    }
+    .event-card{
+      padding: 26px 20px;
+    }
+  }
+
   /* Reveal on scroll */
   .reveal{
     opacity: 0;
@@ -129,7 +213,7 @@
   }
   .section-sub{
     font-family: var(--font-script);
-    font-size: 44px;
+    font-size: clamp(34px, 9vw + 8px, 44px);
     line-height: 1;
     color: var(--copper-deep);
     text-align: center;
@@ -193,7 +277,7 @@
 
   .ampersand{
     font-family: var(--font-script);
-    font-size: 78px;
+    font-size: clamp(64px, 15vw + 20px, 90px);
     color: var(--copper);
     line-height: .8;
     margin: 4px 0;
@@ -201,15 +285,11 @@
   }
   .name{
     font-family: var(--font-script);
-    font-size: 56px;
+    font-size: clamp(48px, 13vw + 12px, 72px);
     line-height: 1;
     color: var(--ink);
     margin: 0;
     font-weight: 400;
-  }
-  @media (min-width: 380px){
-    .name{font-size: 64px}
-    .ampersand{font-size: 86px}
   }
 
   .date-strip{
@@ -256,6 +336,9 @@
     max-width: 300px;
     gap: 6px;
   }
+  .hero-countdown.countdown{
+    margin-bottom: 0;
+  }
   .hero-countdown .cd-cell{
     padding: 10px 4px 8px;
     background: rgba(255,253,251,.82);
@@ -267,6 +350,88 @@
     font-size: 8px;
     letter-spacing: .22em;
     margin-top: 6px;
+  }
+
+  /* Wish marquee — running strip of well-wishes at the bottom of Hero.
+     Always present from first paint (no display/visibility toggling)
+     so it never shifts the rest of the hero content. */
+  .wish-marquee{
+    display: block;
+    margin: 8px auto 0;
+    max-width: 420px;
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 6px 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  }
+  .wish-marquee-track{
+    display: flex;
+    align-items: center;
+    width: max-content;
+    white-space: nowrap;
+    animation: wish-scroll 40s linear infinite;
+  }
+  .wish-marquee-item{
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    padding: 0 16px;
+  }
+  .wish-marquee-item .wn{
+    font-family: var(--font-display);
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: .04em;
+    color: var(--copper-deep);
+  }
+  .wish-marquee-sep{
+    color: var(--copper);
+    opacity: .6;
+    padding: 0 4px;
+  }
+  @keyframes wish-scroll{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+  }
+  button.wish-btn.wish-btn-hero{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 10px auto 0;
+    background: transparent;
+    border: 1px solid var(--copper);
+    color: var(--copper-deep);
+    font-family: var(--font-display);
+    font-style: normal;
+    font-size: 9.5px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background .3s ease, color .3s ease, transform .3s ease, opacity .3s ease;
+    font-weight: 500;
+    opacity: .85;
+  }
+  .wish-btn-hero svg{ width: 10px; height: 10px; opacity: .85; }
+  button.wish-btn.wish-btn-hero:hover{
+    background: var(--copper);
+    color: var(--paper);
+    opacity: 1;
+  }
+  button.wish-btn.wish-btn-hero:active{ transform: scale(.97); }
+
+  @media (prefers-reduced-motion: reduce){
+    .wish-marquee-track{
+      animation: none;
+    }
+    .wish-marquee{
+      overflow-x: auto;
+    }
   }
 
   /* Hero variant: split */
@@ -320,6 +485,12 @@
     margin: 0 auto;
     width: 100%;
   }
+  /* ------------------------------------------------------------
+     Family layout tier (480px): phones ≥480px have enough width
+     for a 2-column family layout without cramping long Vietnamese
+     names. Intentionally separate from the 768px layout-mode
+     (snap-scroll) breakpoint — this only affects grid columns.
+     ------------------------------------------------------------ */
   @media (min-width: 480px){
     .family-grid{
       grid-template-columns: 1fr auto 1fr;
@@ -430,7 +601,7 @@
   }
   .event-title{
     font-family: var(--font-script);
-    font-size: 38px;
+    font-size: clamp(30px, 8vw + 6px, 38px);
     color: var(--ink);
     text-align: center;
     margin: 6px 0 18px;
@@ -492,11 +663,27 @@
   .gallery{
     background: var(--paper-warm);
   }
-  .gallery-grid{
+  .gallery-wrap{
+    position: relative;
+    margin-top: 8px;
+  }
+  .gallery-track{
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .gallery-track::-webkit-scrollbar{ display: none; }
+  .gallery-page{
+    flex: 0 0 100%;
+    scroll-snap-align: start;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     gap: 12px;
-    margin-top: 8px;
   }
   .gallery-item{
     aspect-ratio: 3/4;
@@ -505,8 +692,14 @@
     position: relative;
     background: var(--paper-deep);
     box-shadow: 0 8px 22px -14px rgba(80,40,30,.3);
+    cursor: pointer;
   }
-  .gallery-item:nth-child(3n){aspect-ratio: 1/1}
+  .gallery-page .gallery-item:nth-child(3n){aspect-ratio: 1/1}
+  .gallery-item img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
   .gallery-item .ph{
     position: absolute; inset: 0;
     display: flex; align-items: center; justify-content: center;
@@ -521,7 +714,7 @@
         var(--paper-warm) 28px
       );
   }
-  .gallery-item:nth-child(2n) .ph{
+  .gallery-page .gallery-item:nth-child(2n) .ph{
     background:
       repeating-linear-gradient(
         135deg,
@@ -530,6 +723,9 @@
         var(--paper) 14px,
         var(--paper) 28px
       );
+  }
+  .gallery-item.has-photo .ph{
+    display: none;
   }
   .gallery-item .ph .label{
     font-family: var(--font-mono);
@@ -543,6 +739,25 @@
     width: 26px; height: 26px;
     opacity: .5;
   }
+  .gallery-nav{
+    display: none;
+  }
+  .gallery-all-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin: 14px auto 0;
+    font-family: var(--font-display);
+    font-size: 10px;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--copper-deep);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 1px;
+    width: fit-content;
+  }
 
   /* ============ CLOSING ============ */
   .closing{
@@ -552,7 +767,7 @@
   .closing-quote{
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: 19px;
+    font-size: clamp(16px, 4vw + 9px, 19px);
     line-height: 1.55;
     color: var(--ink);
     max-width: 360px;
@@ -637,7 +852,7 @@
   .signature{
     margin-top: 56px;
     font-family: var(--font-script);
-    font-size: 32px;
+    font-size: clamp(26px, 6vw + 10px, 32px);
     color: var(--copper-deep);
     line-height: 1.1;
   }
@@ -655,8 +870,8 @@
   /* ============ MUSIC BUTTON ============ */
   .music-fab{
     position: fixed;
-    top: 18px;
-    right: max(18px, calc(50vw - 250px + 18px));
+    top: max(18px, env(safe-area-inset-top));
+    right: max(18px, calc(50vw - 250px + 18px), env(safe-area-inset-right));
     z-index: 50;
     width: 44px; height: 44px;
     border-radius: 50%;
@@ -828,6 +1043,60 @@
     padding: 8px 0;
   }
 
+  /* ============ GALLERY LIGHTBOX ============ */
+  .lightbox-bg{
+    position: fixed; inset: 0;
+    background: rgba(20,14,12,.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+    z-index: 150;
+  }
+  .lightbox-bg.open{opacity: 1; pointer-events: auto}
+  .lightbox-img{
+    max-width: min(92vw, 900px);
+    max-height: 82vh;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+  .lightbox-close, .lightbox-arrow{
+    position: absolute;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,253,251,.4);
+    background: rgba(255,253,251,.1);
+    backdrop-filter: blur(4px);
+    color: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background .2s ease;
+  }
+  .lightbox-close:hover, .lightbox-arrow:hover{
+    background: rgba(255,253,251,.22);
+  }
+  .lightbox-close svg, .lightbox-arrow svg{
+    width: 20px; height: 20px;
+  }
+  .lightbox-close{ top: 20px; right: 20px; }
+  .lightbox-arrow{ top: 50%; transform: translateY(-50%); }
+  .lightbox-arrow.prev{ left: 16px; }
+  .lightbox-arrow.next{ right: 16px; }
+  .lightbox-counter{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: .15em;
+    color: rgba(255,253,251,.8);
+  }
+
   /* ============ TWEAKS PANEL ============ */
   .tweaks-panel{
     position: fixed;
@@ -968,7 +1237,7 @@
   .side-dots{
     display: none;
     position: fixed;
-    right: 28px;
+    right: max(28px, calc(28px + env(safe-area-inset-right)));
     top: 50%;
     transform: translateY(-50%);
     flex-direction: column;
@@ -1111,8 +1380,15 @@
       max-width: 360px;
       gap: 8px;
     }
+    .hero-countdown.countdown{
+      margin-bottom: 0;
+    }
     .hero-countdown .cd-cell .num{
       font-size: 24px;
+    }
+    .wish-marquee{
+      margin: 8px 0 0;
+      max-width: 480px;
     }
     .scroll-hint{
       display: none;
@@ -1179,30 +1455,53 @@
       gap: 10px;
     }
 
-    /* 5. Gallery — 3 columns, fixed height to fit 1 screen */
+    /* 5. Gallery — paged 3x2 grid, horizontal scroll between pages, fixed height to fit 1 screen */
     .gallery{
       padding: 48px;
     }
-    .gallery-grid{
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 12px;
+    .gallery-wrap{
       max-width: 900px;
       width: min(100%, 900px);
       margin: 8px auto 0;
     }
+    .gallery-page{
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 16px;
+    }
     .gallery-item{
       aspect-ratio: 4/3;
     }
-    .gallery-item:nth-child(3n){
+    .gallery-page .gallery-item:nth-child(3n){
       aspect-ratio: 4/3;
     }
-    /* Fix: on desktop overflow:hidden clips items → IntersectionObserver
-       never fires → .reveal stays opacity:0 → images invisible.
-       Force all gallery items fully visible on desktop. */
-    .gallery .gallery-item.reveal{
-      opacity: 1;
-      transform: none;
+    .gallery-nav{
+      display: flex;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--copper);
+      background: rgba(255,253,251,.7);
+      backdrop-filter: blur(4px);
+      color: var(--copper-deep);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: background .3s ease, color .3s ease;
     }
+    .gallery-nav svg{
+      width: 20px; height: 20px;
+      display: block;
+    }
+    .gallery-nav:hover{
+      background: var(--copper);
+      color: var(--paper);
+    }
+    .gallery-nav.prev{ left: -56px; }
+    .gallery-nav.next{ right: -56px; }
 
     /* 6. Closing — scale up */
     .closing{
@@ -1257,6 +1556,46 @@
       right: 24px;
       width: 260px;
     }
+  }
+
+  /* ============================================================
+     DESKTOP RESPONSIVE — Short-viewport / landscape safety net
+     Height-based override, orthogonal to the width tiers above.
+     Applies whenever the snap-scroll world (≥768px) doesn't have
+     enough vertical room: landscape phones/tablets, short browser
+     windows with heavy chrome. Must stay AFTER the ≥768px block
+     above so overflow-y:auto here wins over that block's
+     overflow:hidden by source order when both conditions match.
+     ============================================================ */
+  @media (min-width: 768px) and (max-height: 640px){
+    section{
+      min-height: 100vh;
+      min-height: 100svh;
+      height: auto;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      align-content: start;
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+    .corner{ width: 110px; height: 110px; opacity: .4; }
+    .hero-inner{ gap: 32px; }
+    .family-grid{ gap: 20px; }
+    .events .reveal.d1{ gap: 14px; }
+    .event-card{ padding: 18px 16px; }
+    .event-title{ font-size: 28px; margin: 2px 0 8px; }
+    .gallery-page{ gap: 10px; }
+    .section-scroll-btn{ display: none; }
+  }
+
+  @media (min-width: 768px) and (orientation: landscape) and (max-height: 500px){
+    section{ padding: 20px 32px; }
+    .section-sub{ font-size: 32px; margin-bottom: 8px; }
+    .couple-photo{ width: 160px; height: 210px; }
+    .name{ font-size: 44px; }
+    .ampersand{ font-size: 56px; }
+    .hero-countdown{ display: none; }
+    .wish-marquee{ display: none; }
   }
 
   /* ============================================================
@@ -1338,11 +1677,13 @@
       font-size: 40px;
     }
 
-    /* Gallery — wider, 3 cols, 2 rows max */
-    .gallery-grid{
+    /* Gallery — wider track */
+    .gallery-wrap{
       max-width: 1040px;
       width: min(100%, 1040px);
-      gap: 16px;
+    }
+    .gallery-page{
+      gap: 18px;
     }
 
     /* Closing — comfortable scale within 100vh */
@@ -1375,12 +1716,3 @@
     display: block;
   }
 
-  .gallery-item.has-photo{
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .gallery-item.has-photo .ph{
-    display: none;
-  }
