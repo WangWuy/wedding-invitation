@@ -811,46 +811,56 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
   const audio = document.getElementById("bgAudio");
   let playing = false;
   let userPaused = false;
-  let armed = false;
 
   function setPlaying(v){
     playing = v;
     btn.classList.toggle("playing", playing);
   }
 
-  function tryPlay(){
+  // Browsers always allow autoplay when muted. Start muted immediately on
+  // load, then unmute on the very first user gesture anywhere on the page
+  // (tap/click/scroll/key) so it feels like the music "just starts".
+  function startMutedThenUnmuteOnGesture(){
+    audio.muted = true;
     audio.play().then(()=>{
       setPlaying(true);
+      armUnmute();
     }).catch(()=>{
-      armAutoStart();
+      // Even muted autoplay was blocked (rare) — fall back to starting
+      // playback (with sound) on the first gesture instead.
+      armUnmute(true);
     });
   }
 
-  // Android/mobile browsers block autoplay-with-sound until a direct user
-  // gesture. Listen once on the document for the first tap/click/key and
-  // call play() synchronously inside that handler so it still counts as a
-  // user gesture (calling it later, after an awaited promise, would not).
-  function armAutoStart(){
-    if(armed || userPaused) return;
-    armed = true;
-    const start = (e)=>{
-      document.removeEventListener("click", start, true);
-      document.removeEventListener("touchend", start, true);
-      document.removeEventListener("keydown", start, true);
-      armed = false;
+  function armUnmute(needsPlay){
+    const unmute = ()=>{
+      document.removeEventListener("click", unmute, true);
+      document.removeEventListener("touchend", unmute, true);
+      document.removeEventListener("scroll", unmute, true);
+      document.removeEventListener("keydown", unmute, true);
       if(userPaused) return;
-      // Ignore the gesture if it was the music button itself — that has
-      // its own click handler and would otherwise double-trigger play().
-      if(e.target && e.target.closest && e.target.closest("#musicBtn")) return;
-      audio.play().then(()=>setPlaying(true)).catch(()=>{ armed=false; armAutoStart(); });
+      audio.muted = false;
+      if(needsPlay){
+        audio.play().then(()=>setPlaying(true)).catch(()=>{});
+      }
     };
-    document.addEventListener("click", start, true);
-    document.addEventListener("touchend", start, true);
-    document.addEventListener("keydown", start, true);
+    document.addEventListener("click", unmute, true);
+    document.addEventListener("touchend", unmute, true);
+    document.addEventListener("scroll", unmute, true, { passive:true });
+    document.addEventListener("keydown", unmute, true);
+  }
+
+  function tryPlay(){
+    audio.muted = false;
+    audio.play().then(()=>{
+      setPlaying(true);
+    }).catch(()=>{
+      armUnmute(true);
+    });
   }
 
   btn.addEventListener("click", ()=>{
-    if(playing){
+    if(playing && !audio.muted){
       userPaused = true;
       audio.pause();
       setPlaying(false);
@@ -860,7 +870,7 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
     }
   });
 
-  tryPlay();
+  startMutedThenUnmuteOnGesture();
 })();
 
 /* =================== Wish modal =================== */
