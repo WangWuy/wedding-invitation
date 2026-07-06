@@ -819,34 +819,21 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
 
   // Browsers always allow autoplay when muted. Start muted immediately on
   // load, then unmute on the very first user gesture anywhere on the page
-  // (tap/click/scroll/key) so it feels like the music "just starts".
-  function startMutedThenUnmuteOnGesture(){
-    audio.muted = true;
-    audio.play().then(()=>{
-      setPlaying(true);
-      armUnmute();
-    }).catch(()=>{
-      // Even muted autoplay was blocked (rare) — fall back to starting
-      // playback (with sound) on the first gesture instead.
-      armUnmute(true);
-    });
-  }
-
-  function armUnmute(needsPlay){
+  // (tap/click/key — scroll is NOT treated as a gesture on iOS Safari, so
+  // it's not relied on). The gesture listener is armed unconditionally and
+  // does not wait on the muted play() promise, which can hang for a long
+  // time on mobile networks while the audio buffers.
+  function unmuteOnFirstGesture(){
     const unmute = ()=>{
       document.removeEventListener("click", unmute, true);
       document.removeEventListener("touchend", unmute, true);
-      document.removeEventListener("scroll", unmute, true);
       document.removeEventListener("keydown", unmute, true);
       if(userPaused) return;
       audio.muted = false;
-      if(needsPlay){
-        audio.play().then(()=>setPlaying(true)).catch(()=>{});
-      }
+      audio.play().then(()=>setPlaying(true)).catch(()=>{});
     };
     document.addEventListener("click", unmute, true);
     document.addEventListener("touchend", unmute, true);
-    document.addEventListener("scroll", unmute, true, { passive:true });
     document.addEventListener("keydown", unmute, true);
   }
 
@@ -854,9 +841,7 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
     audio.muted = false;
     audio.play().then(()=>{
       setPlaying(true);
-    }).catch(()=>{
-      armUnmute(true);
-    });
+    }).catch(()=>{});
   }
 
   btn.addEventListener("click", ()=>{
@@ -870,7 +855,9 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
     }
   });
 
-  startMutedThenUnmuteOnGesture();
+  unmuteOnFirstGesture();
+  audio.muted = true;
+  audio.play().then(()=>setPlaying(true)).catch(()=>{});
 })();
 
 /* =================== Wish modal =================== */
