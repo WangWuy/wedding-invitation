@@ -810,6 +810,8 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
   const btn = document.getElementById("musicBtn");
   const audio = document.getElementById("bgAudio");
   let playing = false;
+  let userPaused = false;
+  let armed = false;
 
   function setPlaying(v){
     playing = v;
@@ -820,24 +822,40 @@ window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
     audio.play().then(()=>{
       setPlaying(true);
     }).catch(()=>{
-      // Autoplay blocked — start on first user interaction instead.
-      const start = ()=>{
-        audio.play().then(()=>setPlaying(true)).catch(()=>{});
-        document.removeEventListener("click", start);
-        document.removeEventListener("touchstart", start);
-        document.removeEventListener("keydown", start);
-      };
-      document.addEventListener("click", start, { once:true });
-      document.addEventListener("touchstart", start, { once:true });
-      document.addEventListener("keydown", start, { once:true });
+      armAutoStart();
     });
+  }
+
+  // Android/mobile browsers block autoplay-with-sound until a direct user
+  // gesture. Listen once on the document for the first tap/click/key and
+  // call play() synchronously inside that handler so it still counts as a
+  // user gesture (calling it later, after an awaited promise, would not).
+  function armAutoStart(){
+    if(armed || userPaused) return;
+    armed = true;
+    const start = (e)=>{
+      document.removeEventListener("click", start, true);
+      document.removeEventListener("touchend", start, true);
+      document.removeEventListener("keydown", start, true);
+      armed = false;
+      if(userPaused) return;
+      // Ignore the gesture if it was the music button itself — that has
+      // its own click handler and would otherwise double-trigger play().
+      if(e.target && e.target.closest && e.target.closest("#musicBtn")) return;
+      audio.play().then(()=>setPlaying(true)).catch(()=>{ armed=false; armAutoStart(); });
+    };
+    document.addEventListener("click", start, true);
+    document.addEventListener("touchend", start, true);
+    document.addEventListener("keydown", start, true);
   }
 
   btn.addEventListener("click", ()=>{
     if(playing){
+      userPaused = true;
       audio.pause();
       setPlaying(false);
     } else {
+      userPaused = false;
       tryPlay();
     }
   });
